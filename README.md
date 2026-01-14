@@ -1,4 +1,4 @@
-# Python code to solve the diffusion equation in 2D
+# Diffusion in 2D
 
 Please follow the instructions in [python_testing_exercise.md](https://github.com/Simulation-Software-Engineering/Lecture-Material/blob/main/05_testing_and_ci/python_testing_exercise.md).
 
