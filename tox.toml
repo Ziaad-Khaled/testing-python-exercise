@@ -1,0 +1,9 @@
+requires = ["tox>=4"]
+env_list = ["py"]
+
+[env_run_base]
+description = "Run tests using pytest"
+skip_install = true
+deps = ["-rrequirements.txt"]
+set_env = { PYTHONPATH = "{tox_root}" }
+commands = [["pytest", "tests", "-v"]]
