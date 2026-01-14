@@ -12,3 +12,18 @@ Traceback (most recent call last):
     assert isinstance(T_cold, float), 'T_cold should be a float'
 AssertionError: T_cold should be a float
 ```
+
+# Step 4: Verification
+
+Introduced a bug in `initialize_domain`: `self.nx = int(h / dx)` instead of `int(w / dx)`.
+The test `test_initialize_domain` failed as expected with `assert 20 == 40`.
+This confirms the test correctly catches errors in domain initialization.
+
+# Step 4: Verification (Unittest)
+
+Refactored tests to use `unittest` and `setUp`. Re-introduced the same bug in `initialize_domain`.
+The test `test_initialize_domain` failed again as expected:
+```
+FAILED tests/unit/test_diffusion2d_functions.py::TestDiffusion2D::test_initialize_domain - AssertionError: 20 != 40
+```
+This confirms the refactored test suite is correctly constructed.
