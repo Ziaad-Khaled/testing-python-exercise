@@ -27,3 +27,17 @@ The test `test_initialize_domain` failed again as expected:
 FAILED tests/unit/test_diffusion2d_functions.py::TestDiffusion2D::test_initialize_domain - AssertionError: 20 != 40
 ```
 This confirms the refactored test suite is correctly constructed.
+
+# Step 5: Integration Tests
+
+Implemented integration tests in `tests/integration/test_diffusion2d.py`.
+- `test_initialize_physical_parameters`: Verifies `dt` is computed correctly when `initialize_domain` and `initialize_physical_parameters` are called together.
+- `test_set_initial_condition`: Verifies the initial condition array `u` matches expected values computed manually.
+
+Both tests passed.
+
+# Step 5: Verification (Integration Tests)
+
+Introduced bug in `initialize_physical_parameters` (wrong formula: `dx2 * dy2` instead of `dx2 + dy2`).
+The test `test_initialize_physical_parameters` failed as expected.
+This confirms the integration tests correctly catch errors.
